@@ -11,4 +11,16 @@ app.use(express.json());
 
 app.use("/api/books", booksRoute);
 
+// Error handler
+
+app.use((err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong!";
+  console.log(err);
+
+  return res
+    .status(errorStatus)
+    .json({ status: "Failure", message: errorMessage });
+});
+
 export default app;
