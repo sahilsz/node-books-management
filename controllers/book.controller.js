@@ -64,8 +64,19 @@ export const newBook = async (req, res, next) => {
   }
 };
 
-export const getBookById = async (req, res, next) => {};
+export const deleteBook = async (req, res, next) => {
+  try {
+    const book = await Book.findById(req.params.id);
 
-export const updateBook = async (req, res, next) => {};
+    if (!book) return next(createError(404, "Book not found!"));
 
-export const newBook = async (req, res, next) => {};
+    if (book.author !== req.userId)
+      return next(createError(403, "You cannot delete this book!"));
+
+    await Book.findByIdAndDelete(req.params.id);
+
+    return res.status(200).json({ status: "Success", message: "deleted" });
+  } catch (err) {
+    return next(err);
+  }
+};
