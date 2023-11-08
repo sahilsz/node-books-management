@@ -1,7 +1,7 @@
-const createError = (status = 500, message) => {
+const createError = (status, message) => {
   const err = new Error();
 
-  err.status = 500;
+  err.status = status || 500;
   err.message = message || "Internal Server Error";
 
   return err;
