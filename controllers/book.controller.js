@@ -32,6 +32,9 @@ export const updateBook = async (req, res, next) => {
 
     if (!book) return next(createError(404, "Book not found!"));
 
+    if (book.author !== req.userId)
+      return next(createError(403, "You can't update this book"));
+
     book.title = title;
     book.summary = summary;
 
