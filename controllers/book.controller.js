@@ -50,7 +50,7 @@ export const newBook = async (req, res, next) => {
       return next(createError(400, "Send the appropriate data"));
     }
 
-    const book = new Book({ ...req.body, author: "admin" });
+    const book = new Book({ ...req.body, author: req.userId });
 
     await book.save();
 

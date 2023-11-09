@@ -1,4 +1,5 @@
 import express from "express";
+import { verifyToken } from "../middleware/jwt.js";
 import {
   getAllBooks,
   getBookById,
@@ -11,8 +12,8 @@ const router = express.Router();
 
 router.get("/", getAllBooks);
 router.get("/:id", getBookById);
-router.post("/:id", updateBook);
-router.post("/", newBook);
-router.delete("/:id", deleteBook);
+router.post("/:id", verifyToken, updateBook);
+router.post("/", verifyToken, newBook);
+router.delete("/:id", verifyToken, deleteBook);
 
 export default router;

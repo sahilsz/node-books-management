@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import booksRoute from "./routes/book.route.js";
+import bookRoutes from "./routes/book.route.js";
+import authRoutes from "./routes/auth.route.js";
 
 const app = express();
 
@@ -11,7 +12,8 @@ app.use(cookieParser());
 
 // Routes
 
-app.use("/api/books", booksRoute);
+app.use("/api/books", bookRoutes);
+app.use("/api/auth/", authRoutes);
 
 // Error handler
 
