@@ -1,4 +1,5 @@
 import express from "express";
+import cookieParser from "cookie-parser";
 import booksRoute from "./routes/book.route.js";
 
 const app = express();
@@ -6,6 +7,7 @@ const app = express();
 // Middlewares
 
 app.use(express.json());
+app.use(cookieParser());
 
 // Routes
 
