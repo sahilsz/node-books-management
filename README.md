@@ -31,7 +31,7 @@ Additional
 - [x] Added **Unit Tests** for most of the routes
 
 ## Meta
-Sahil - [sahilsz@proton.me](mailto:sahilsz@proton.me)
+Sahil - sahilsz@proton.me
 
 https://github.com/sahilsz
 
