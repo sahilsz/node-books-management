@@ -1,10 +1,25 @@
 # node-books-management-API
-> Node backend for managing books
+> Node backend for managing books and mongodb
 
 A Node.js backend RESTful APIs for managing and storing individuals books. This is my submission project for one of my Interviews.
 
 ## Setup Locally
+Clone this repo and instally packages listed in package.json
+```bash
+git clone https://github.com/sahilsz/node-books-management .
+```
 
+**Rename `.env.example` to `.env` and update them accordingly.**
+
+Install Dependencies
+```
+npm install
+```
+
+Run app locally
+```
+npm start
+```
 
 ## API Endpoints
 
