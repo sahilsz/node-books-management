@@ -3,13 +3,83 @@
 
 A Node.js backend RESTful APIs for managing and storing individuals books. This is my submission project for one of my Interviews.
 
-## Usage example
+## Setup Locally
+
+
+## API Endpoints
+
+### Auth
+User Registration
+```
+POST URL/auth/register
+```
+User Login
+```
+POST URL/auth/login
+```
+User Logout
+```
+GET URL/auth/logout
+```
+
+### CURD operation on Books
+
+**CREATE Operations**:
+
+Create book
+```
+POST URL/books
+```
+> Only logged in users can create a book, to get the authors details
+
+**READ Operations:**
+
+Get books
+```
+GET URL/books
+```
+Get single book
+```
+GET URL/books/ID
+```
+
+**UPDATE Opeartions**
+
+Update book
+```
+PATCH URL/books/ID
+```
+> Note: Only the book author can update the book
+
+**DELETE Opeartions**
+
+Delete book
+```
+DELETE URL/books/ID
+```
+> Note: Only the book author can update the book
 
 ## Development setup
 
 Clone this repo and instally packages listed in package.json
+```bash
+git clone https://github.com/sahilsz/node-books-management .
+```
 
-`npm install`
+Install Dependencies
+```
+npm install
+```
+
+Run app locally
+```
+npm run dev
+```
+
+Run tests
+```
+npm run test
+```
 
 ## Features
 Required
@@ -23,6 +93,7 @@ Required
 - [x] Documenting - API endpoints and their usage
 - [x] Documenting - Instructions to set up and run the application locally
 - [x] Documenting - Any decision or assumption
+
 Additional
 - [x] Added Authentication using JWT to the backend
 - [x] Added Authorization to the app
